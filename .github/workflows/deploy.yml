@@ -26,10 +26,8 @@ jobs:
         push: true
         tags: pavani1230/devops:latest
 
-    - name: Configure Kubeconfig
-       run: |
-         echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > kubeconfig
-         export KUBECONFIG=$PWD/kubeconfig
+    - name: Save kubeconfig to file
+      run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > kubeconfig
 
     - name: Deploy to Kubernetes
       env:
