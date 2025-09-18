@@ -24,7 +24,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: pavani1230/devops:latest
+        tags: pavani1230/devops:v1
 
    - name: Set up kubeconfig
      run: |
