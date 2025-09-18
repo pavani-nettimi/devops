@@ -24,11 +24,12 @@ jobs:
       with:
         context: .
         push: true
-        tags: pavani1230/devops:v1
+        tags: pavani1230/devops:latest
 
-   - name: Set up kubeconfig
-     run: |
-       echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+    - name: Configure Kubeconfig
+       run: |
+         echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > kubeconfig
+         export KUBECONFIG=$PWD/kubeconfig
 
     - name: Deploy to Kubernetes
       env:
