@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: pavani1230/devops:v2
+        image: pavani1230/devops:latest
         ports:
         - containerPort: 4499
