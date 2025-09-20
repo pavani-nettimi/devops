@@ -8,7 +8,6 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY wisecow.sh /usr/local/bin/wisecow.sh
-
 RUN chmod +x /usr/local/bin/wisecow.sh
 
 EXPOSE 4499
