@@ -24,7 +24,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: pavani1230/devops:latest
+          tags: |
+            pavani1230/devops:latest
+            pavani1230/devops:${{ github.sha }}
 
       - name: Save kubeconfig to file
         run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > kubeconfig
